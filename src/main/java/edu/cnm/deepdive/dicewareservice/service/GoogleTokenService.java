@@ -59,7 +59,7 @@ public class GoogleTokenService implements ResourceServerTokenServices {
         Collection<GrantedAuthority> grants =
             Collections.singleton(new SimpleGrantedAuthority("ROLE_USER"));
         Authentication base =
-            new UsernamePasswordAuthenticationToken(payload.getSubject(), token, grants);
+            new UsernamePasswordAuthenticationToken(user, token, grants);
         OAuth2Request request = converter.extractAuthentication(payload).getOAuth2Request();
         return new OAuth2Authentication(request, base);
       } else {
