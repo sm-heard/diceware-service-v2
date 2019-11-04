@@ -10,4 +10,6 @@ public interface PassphraseRepository extends CrudRepository<Passphrase, Long> {
 
   Iterable<Passphrase> getAllByOrderByKeyAsc();
 
+  //TODO define user methods
+
 }
